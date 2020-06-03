@@ -1,19 +1,14 @@
 <template>
   <div class="treemap">
-    <!-- The SVG structure is explicitly defined in the template with attributes derived from component data -->
     <svg :height="height" style="margin-left: 0px;" :width="width">
       <g style="shape-rendering: crispEdges;" transform="translate(0,20)">
-        <!-- We can use Vue transitions too! -->
         <transition-group name="list" tag="g" class="depth">
-          <!-- Generate each of the visible squares at a given zoom level (the current selected node) -->
           <g
             class="children"
             v-for="(children, index) in selectedNode._children"
             :key="'c_' + children.id"
             v-if="selectedNode"
             >
-
-            <!-- Generate the children squares (only visible on hover of a square) -->
             <rect
               v-for="child in children._children"
               class="child"
@@ -25,12 +20,6 @@
               :y="y(child.y0)"
               >
             </rect>
-
-            <!--
-              The visible square rect element.
-              You can attribute directly an event, that fires a method that changes the current node,
-              restructuring the data tree, that reactivly gets reflected in the template.
-            -->
             <rect
               class="parent"
               v-on:click="selectNode"
@@ -43,7 +32,6 @@
               :style="{ fill: color(index) }"
               >
 
-              <!-- The title attribute -->
               <title>{{ children.data.bytes }} | {{ children.data.dataType }}</title>
             </rect>
 
