@@ -4,6 +4,25 @@
       <a>Mem-Challenge Java Profiler</a>
     </div>
     <img src="./assets/web-ui.png" width="100%" >
+    <p> </p>
+    <p> </p>
+    <div class="svg-wrapper">
+      <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+        <rect class="shape" height="60" width="320" />
+      </svg>
+       <div class="text">O Profiler</div>
+    </div>
+    <!-- -->
+    <ul>
+      <li>As allowed that assumptions would be made, here was assumed that
+      implementing a css grid with hundreds of cells (representing each byte of memory) would not be suggestive,so,
+       a nested tree map of grids was used instead.<br>
+       Hovering upon region shows : The Size of the Memory Region and The Data Type of the Memory Region<br>
+       Clicking region shows regions inside the selected region</li>
+    </ul>
+
+    <!-- -->
+
     <router-view/>
   </div>
 </template>
@@ -59,4 +78,9 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+</style>
+
+<!-- estilo grade-->
+<style>
+
 </style>

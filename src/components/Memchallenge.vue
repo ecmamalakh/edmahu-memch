@@ -44,7 +44,7 @@
               >
 
               <!-- The title attribute -->
-              <title>{{ children.data.name }} | {{ children.value }}</title>
+              <title>{{ children.data.bytes }} | {{ children.data.dataType }}</title>
             </rect>
 
             <!-- The visible square text element with the title and value of the child node -->
@@ -55,7 +55,8 @@
               :y="y(children.y0) + 6"
               style="fill-opacity: 1;"
               >
-              {{ children.data.name }}
+              <!--O nome principa de cada big cell-->
+              {{ children.data.name }} <!--{{ children.data.bytes }} | {{ children.data.dataType }}-->
             </text>
 
             <text
@@ -66,7 +67,7 @@
               style="fill-opacity: 1;"
               >
 
-              {{ children.value }}
+              <!--{{ children.value }}-->
             </text>
 
           </g>
@@ -130,8 +131,8 @@ export default {
         bottom: 0,
         left: 0
       },
-      width: 960,
-      height: 530,
+      width: 1100,
+      height: 900,
       selected: null,
       color: {}
     }
